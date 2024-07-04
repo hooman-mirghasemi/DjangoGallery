@@ -13,6 +13,7 @@ class Post(models.Model):
     title = models.CharField(max_length = 50, verbose_name='عنوان')
     description = models.TextField(verbose_name='توضیحات')
     image = models.ImageField(upload_to='images/')
+    category_id = models.ForeignKey(Category, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.title
